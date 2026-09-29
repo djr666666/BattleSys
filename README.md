@@ -94,7 +94,7 @@ flowchart TB
     TURN --> 内核层
     ARPG --> 内核层
     内核层 --> DATA
-    DATA -. 由...提供 .-> PROVIDER
+    DATA -. 由Provider提供 .-> PROVIDER
 ```
 
 **两条铁律:**
@@ -173,10 +173,10 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    FW["框架<br/>SkillLogicConfig / SkillBuffMediator"] -->|只问接口| IF["IBattleConfigProvider"]
-    IF -.实现.- P1["LubanConfigProvider<br/>(读鲁班)"]
-    IF -.实现.- P2["JsonConfigProvider<br/>(读JSON)"]
-    IF -.实现.- P3["DemoConfigProvider<br/>(写死,示例)"]
+    FW["框架 SkillLogicConfig / SkillBuffMediator"] -->|只问接口| IF["IBattleConfigProvider"]
+    P1["LubanConfigProvider 读鲁班"] -. 实现 .-> IF
+    P2["JsonConfigProvider 读JSON"] -. 实现 .-> IF
+    P3["DemoConfigProvider 写死示例"] -. 实现 .-> IF
 ```
 
 ```csharp
